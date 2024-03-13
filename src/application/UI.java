@@ -9,6 +9,12 @@ import java.util.Scanner;
 
 public class UI {
 
+    // https://stackoverflow.com/questions/2979383/java-clear-the-console
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
     //text colors
@@ -40,7 +46,7 @@ public class UI {
             return new ChessPosition(column, row);
         }
         catch (RuntimeException e ){
-            throw new InputMismatchException("Error reading ChessPosition. Valida values are from a1 to h8.");
+            throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
         }
     }
 
